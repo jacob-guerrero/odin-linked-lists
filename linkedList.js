@@ -21,10 +21,23 @@ const LinkedList = (head = null) => {
     list.head = newNode;
   };
 
+  const size = () => {
+    let tempNode = list.head;
+    let nodeCounter = 0;
+
+    while (tempNode != null) 
+    {
+        nodeCounter += 1;
+        tempNode = tempNode.next;
+    }
+    return nodeCounter;
+  };
+
   return {
     head,
     append,
     prepend,
+    size,
   };
 };
 
@@ -46,3 +59,4 @@ list.append(12);
 console.log(list.head.next.next.value);
 list.prepend(11);
 console.log(list);
+console.log(list.size());
