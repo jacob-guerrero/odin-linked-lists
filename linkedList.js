@@ -36,12 +36,21 @@ const LinkedList = (head = null) => {
     return list.head;
   };
 
+  const getTail = () => {
+    let current = list.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    return current;
+  };
+
   return {
     head,
     append,
     prepend,
     size,
     getHead,
+    getTail,
   };
 };
 
