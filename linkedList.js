@@ -44,6 +44,14 @@ const LinkedList = (head = null) => {
     return current;
   };
 
+  const at = (index) => {
+    let current = list.head;
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+    return current;
+  };
+
   return {
     head,
     append,
@@ -51,6 +59,7 @@ const LinkedList = (head = null) => {
     size,
     getHead,
     getTail,
+    at,
   };
 };
 
@@ -77,3 +86,4 @@ console.log(list);
 console.log(list.size());
 console.log(list.getHead());
 console.log(list.getTail());
+console.log(list.at(0), list.at(3), list.at(5));
