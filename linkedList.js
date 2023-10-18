@@ -25,12 +25,15 @@ const LinkedList = (head = null) => {
     let tempNode = list.head;
     let nodeCounter = 0;
 
-    while (tempNode != null) 
-    {
-        nodeCounter += 1;
-        tempNode = tempNode.next;
+    while (tempNode != null) {
+      nodeCounter += 1;
+      tempNode = tempNode.next;
     }
     return nodeCounter;
+  };
+
+  const getHead = () => {
+    return list.head;
   };
 
   return {
@@ -38,6 +41,7 @@ const LinkedList = (head = null) => {
     append,
     prepend,
     size,
+    getHead,
   };
 };
 
@@ -58,5 +62,9 @@ console.log(list.head.next.value);
 list.append(12);
 console.log(list.head.next.next.value);
 list.prepend(11);
+list.prepend("Hello");
+list.append("World");
 console.log(list);
 console.log(list.size());
+console.log(list.getHead());
+console.log(list.getTail());
