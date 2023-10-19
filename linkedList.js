@@ -96,6 +96,17 @@ const LinkedList = (head = null) => {
     return null;
   };
 
+  const toString = () => {
+    let current = list.head;
+    let string = "";
+
+    while (current !== null) {
+      string += `( ${current.value} ) -> `;
+      current = current.next;
+    }
+    return `${string}null`;
+  };
+
   return {
     head,
     append,
@@ -107,6 +118,7 @@ const LinkedList = (head = null) => {
     pop,
     contains,
     find,
+    toString,
   };
 };
 
@@ -137,3 +149,4 @@ console.log(list.at(0), list.at(3), list.at(5));
 console.log(list.pop());
 console.log(list.contains(12));
 console.log(list.find(7));
+console.log(list.toString());
