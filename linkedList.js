@@ -82,6 +82,20 @@ const LinkedList = (head = null) => {
     return false;
   };
 
+  const find = (value) => {
+    let current = list.head;
+    let index = 0;
+
+    while (current) {
+      if (current.value === value) {
+        return index;
+      }
+      current = current.next;
+      index += 1;
+    }
+    return null;
+  };
+
   return {
     head,
     append,
@@ -92,6 +106,7 @@ const LinkedList = (head = null) => {
     at,
     pop,
     contains,
+    find,
   };
 };
 
@@ -121,3 +136,4 @@ console.log(list.getTail());
 console.log(list.at(0), list.at(3), list.at(5));
 console.log(list.pop());
 console.log(list.contains(12));
+console.log(list.find(7));
